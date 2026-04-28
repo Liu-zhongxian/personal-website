@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://52drunk.com/sitemap-index.xml

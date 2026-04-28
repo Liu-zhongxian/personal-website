@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+let projects: Array<{
+  name: string;
+  description: string;
+  url: string;
+  stars: number;
+  language: string | null;
+  homepage: string | null;
+}> = [];
+
+try {
+  const filePath = join(process.cwd(), 'src/content/projects.json');
+  const raw = readFileSync(filePath, 'utf-8');
+  projects = JSON.parse(raw);
+} catch {
+  // projects.json not yet generated
+}
+---
+
+<BaseLayout title="项目">
+  <h1 class="text-3xl font-bold mb-8">开源项目</h1>
+  {projects.length === 0 ? (
+    <p class="text-text-secondary">暂无项目数据。请运行 fetch 脚本获取 GitHub 仓库信息。</p>
+  ) : (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  )}
+</BaseLayout>

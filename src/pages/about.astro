@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="关于">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">关于我</h1>
+
+    <section class="mb-12">
+      <p class="text-lg text-text-secondary leading-relaxed">
+        你好！我是一名开发者，热爱编程和开源。这个网站用来聚合我在各个平台的内容，
+        包括博客、项目和技术文章。
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">技术栈</h2>
+      <div class="flex flex-wrap gap-3">
+        {['TypeScript', 'React', 'Astro', 'Node.js', 'Python', 'Go'].map((tech) => (
+          <span class="px-4 py-2 bg-surface border border-border rounded-lg text-sm">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">联系方式</h2>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-3">
+          <span class="text-text-secondary">GitHub:</span>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-accent">
+            github.com/your-username
+          </a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-text-secondary">X (Twitter):</span>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="text-accent">
+            @your-handle
+          </a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-text-secondary">CSDN:</span>
+          <a href="https://blog.csdn.net" target="_blank" rel="noopener noreferrer" class="text-accent">
+            blog.csdn.net/your-id
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

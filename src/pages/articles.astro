@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="文章">
+  <h1 class="text-3xl font-bold mb-8">文章</h1>
+  {articles.length === 0 ? (
+    <p class="text-text-secondary">暂无文章。请运行 fetch 脚本获取 CSDN 文章。</p>
+  ) : (
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {articles.map((article) => (
+        <ArticleCard
+          title={article.data.title}
+          description={article.data.description}
+          pubDate={article.data.pubDate}
+          originalUrl={article.data.originalUrl}
+          category={article.data.category}
+        />
+      ))}
+    </div>
+  )}
+</BaseLayout>
