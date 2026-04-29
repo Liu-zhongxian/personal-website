@@ -25,7 +25,7 @@ jobs:
         run: npx tsx scripts/fetch-github-repos.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+          GITHUB_USERNAME: ${{ vars.GH_USERNAME }}
 
       - name: Fetch CSDN articles
         run: npx tsx scripts/fetch-csdn-articles.ts
