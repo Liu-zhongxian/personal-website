@@ -1,5 +1,13 @@
 [
   {
+    "name": "codex-cli-bootstrap-repo",
+    "description": "Windows 一键安装 OpenAI Codex CLI 的引导脚本，自动检测并安装 Git 2.53.0、Node.js 22.22.2 和 npm，然后安装最新 @openai/codex。",
+    "url": "https://github.com/Liu-zhongxian/codex-cli-bootstrap-repo",
+    "stars": 1,
+    "language": "PowerShell",
+    "homepage": null
+  },
+  {
     "name": "High-quality-Chinese-RSS-feed",
     "description": "订阅人数最多的rss源，中文优质rss源",
     "url": "https://github.com/Liu-zhongxian/High-quality-Chinese-RSS-feed",
@@ -13,14 +21,6 @@
     "url": "https://github.com/Liu-zhongxian/personal-website",
     "stars": 0,
     "language": "Astro",
-    "homepage": null
-  },
-  {
-    "name": "codex-cli-bootstrap-repo",
-    "description": "Windows 一键安装 OpenAI Codex CLI 的引导脚本，自动检测并安装 Git 2.53.0、Node.js 22.22.2 和 npm，然后安装最新 @openai/codex。",
-    "url": "https://github.com/Liu-zhongxian/codex-cli-bootstrap-repo",
-    "stars": 0,
-    "language": "PowerShell",
     "homepage": null
   }
 ]
